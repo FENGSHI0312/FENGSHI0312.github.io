@@ -524,11 +524,15 @@
 <h4 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h4><p><em>注：须root用户执行</em></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">useradd [-g -d] 用户名  #创建用户</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-g 指定用户的组，不指定-g，会创建同名组并自动加入，指定-g需要组已经存在，如已存在同名组，必须使用-g</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-d 指定用户HOME路径，不指定HOME目录默认在 /home/用户名</span></span><br><span class="line"></span><br><span class="line">userdel [-r] 用户名 #删除用户</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-r 删除用户的HOME目录，不使用-r，删除用户时，HOME目录保留</span></span><br><span class="line"></span><br><span class="line">id [用户名] #查看用户所属组</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">用户名 被查看的用户，如果不提供，查看自身</span></span><br><span class="line"></span><br><span class="line">usermod -aG 用户组 用户名 #修改用户所属组</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">将指定用户加入指定用户组</span></span><br><span class="line"></span><br><span class="line">gatent passwd #查看系统全部用户信息</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">其中包含7份信息，分别是</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">用户名：密码（X）：用户ID：组ID：描述信息：HOME目录：执行终端（默认bash）</span></span><br><span class="line"></span><br><span class="line">gatent group #查看系统全部组信息</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">其中包含3份信息，分别是</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">组名称：组认证（显示为X）：组ID</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="权限信息"><a href="#权限信息" class="headerlink" title="权限信息"></a>权限信息</h3><p><u>drwxf-xr-x</u>  3  <u>fgui</u>  <u>fgui</u></p>
+<h3 id="权限信息"><a href="#权限信息" class="headerlink" title="权限信息"></a>权限信息</h3><blockquote>
+<p><u>drwxf-xr-x</u>  3  <u>fgui</u>  <u>fgui</u></p>
+</blockquote>
 <p><em>注：1.表示第一个下划线，以此类推</em></p>
+<blockquote>
 <p>1.表示文件，文件夹的权限控制信息</p>
 <p>2.表示文件，文件夹所属用户</p>
 <p>3.表示文件，文件夹所属用户组</p>
+</blockquote>
 <p>第一个下划线表示的含义：</p>
 <table>
 <thead>
