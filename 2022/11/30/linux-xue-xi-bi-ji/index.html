@@ -503,7 +503,83 @@
 
 <h4 id="命令模式常用快捷键"><a href="#命令模式常用快捷键" class="headerlink" title="命令模式常用快捷键"></a>命令模式常用快捷键</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dd #删除当前行</span><br><span class="line">yy #复制当前行</span><br><span class="line">p #粘贴复制的内容</span><br><span class="line">u #撤销修改</span><br><span class="line">ctrl+r #反向撤销</span><br></pre></td></tr></table></figure>
 
+<h3 id="su和exit命令"><a href="#su和exit命令" class="headerlink" title="su和exit命令"></a>su和exit命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su [-] [用户名]</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-符号 可选，建议带上，表示是否在切换用户后加载环境变量</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">参数 用户名，表示要切换的用户，用户名可以省略，省略表示切换到root上，切换用户后</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">，可通过<span class="built_in">exit</span>命令退回上一个用户，也可以使用快捷键ctrl+d</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="sudo命令"><a href="#sudo命令" class="headerlink" title="sudo命令"></a>sudo命令</h3><p>为普通命令授权，临时以root身份执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo 其他命令</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在其他命令之前，带上sudo即可为这一条命令临时赋予root权限</span></span><br></pre></td></tr></table></figure>
+
+<p>操作流程：切换到root用户，执行visudo命令，在文件最后添加 <em><strong>用户名 ALL=(ALL) NOPASSWD:ALL</strong></em></p>
+<h3 id="用户和用户组"><a href="#用户和用户组" class="headerlink" title="用户和用户组"></a>用户和用户组</h3><blockquote>
+<p>可配置多个用户和用户组</p>
+<p>用户可以加入多个用户组中</p>
+</blockquote>
+<p>linux中对权限的管理有两个级别：</p>
+<blockquote>
+<p>针对用户的权限控制</p>
+<p>针对用户组的权限控制</p>
+</blockquote>
+<h4 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h4><p><em>注：须root用户执行</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">groupadd 用户组名 #创建用户组</span><br><span class="line">groupdel 用户组名 #删除用户组</span><br></pre></td></tr></table></figure>
+
+<h4 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h4><p><em>注：须root用户执行</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">useradd [-g -d] 用户名  #创建用户</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-g 指定用户的组，不指定-g，会创建同名组并自动加入，指定-g需要组已经存在，如已存在同名组，必须使用-g</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-d 指定用户HOME路径，不指定HOME目录默认在 /home/用户名</span></span><br><span class="line"></span><br><span class="line">userdel [-r] 用户名 #删除用户</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-r 删除用户的HOME目录，不使用-r，删除用户时，HOME目录保留</span></span><br><span class="line"></span><br><span class="line">id [用户名] #查看用户所属组</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">用户名 被查看的用户，如果不提供，查看自身</span></span><br><span class="line"></span><br><span class="line">usermod -aG 用户组 用户名 #修改用户所属组</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">将指定用户加入指定用户组</span></span><br><span class="line"></span><br><span class="line">gatent passwd #查看系统全部用户信息</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">其中包含7份信息，分别是</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">用户名：密码（X）：用户ID：组ID：描述信息：HOME目录：执行终端（默认bash）</span></span><br><span class="line"></span><br><span class="line">gatent group #查看系统全部组信息</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">其中包含3份信息，分别是</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">组名称：组认证（显示为X）：组ID</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="权限信息"><a href="#权限信息" class="headerlink" title="权限信息"></a>权限信息</h3><p><u>drwxf-xr-x</u>  3  <u>fgui</u>  <u>fgui</u></p>
+<p><em>注：1.表示第一个下划线，以此类推</em></p>
+<p>1.表示文件，文件夹的权限控制信息</p>
+<p>2.表示文件，文件夹所属用户</p>
+<p>3.表示文件，文件夹所属用户组</p>
+<p>第一个下划线表示的含义：</p>
+<table>
+<thead>
+<tr>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+<th align="center">7</th>
+<th align="center">8</th>
+<th align="center">9</th>
+<th align="center">10</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-或d或l</td>
+<td align="center">r或-</td>
+<td align="center">w或-</td>
+<td align="center">x或-</td>
+<td align="center">r或-</td>
+<td align="center">w或-</td>
+<td align="center">x或-</td>
+<td align="center">r或-</td>
+<td align="center">w或-</td>
+<td align="center">x或-</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>-符号 表示文件</p>
+<p>d符号 表示文件夹</p>
+<p>l符号 表示软链接</p>
+</blockquote>
+<blockquote>
+<p>2~4 表示所属用户权限</p>
+<blockquote>
+<p>r 读权限    w 写权限    x执行权限</p>
+</blockquote>
+<p>5~7 表示所属用户组权限</p>
+<p>8~10 表示其他用户权限</p>
+</blockquote>
+<h3 id="chomd命令"><a href="#chomd命令" class="headerlink" title="chomd命令"></a>chomd命令</h3><p>修改文件、文件夹的权限细节，只能是文件、文件夹的所属用户或root有权修改</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod [-R] 权限 文件或文件夹</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-R 对文件夹内的全部内容应用同样规则</span></span><br></pre></td></tr></table></figure>
+
+<p>权限位置可以直接使用类似于二进制的方式</p>
+<blockquote>
+<p>1：–x    2：-w-    3：-wx    4：r–    5：r-x    6：rw-    7：rwx</p>
+</blockquote>
+<h3 id="chown命令"><a href="#chown命令" class="headerlink" title="chown命令"></a>chown命令</h3><p>修改文件、文件夹的所属用户、用户组（只可root执行）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chown [-R] [用户][:][用户组] 文件或文件夹</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">选项-R 对文件夹内全部内容应用相同规则</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">用户 修改所属用户</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">用户组 修改所属用户组</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">: 用户分隔用户和用户组</span></span><br></pre></td></tr></table></figure>
 
 
                 
