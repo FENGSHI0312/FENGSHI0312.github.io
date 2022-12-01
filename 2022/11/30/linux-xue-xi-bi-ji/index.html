@@ -366,29 +366,145 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="linux系统的组成"><a href="#linux系统的组成" class="headerlink" title="linux系统的组成"></a>linux系统的组成</h2><p>linux包含了<strong>系统内核</strong>以及<strong>系统级应用程序</strong><br>系统提供<strong>内核</strong>+<strong>系统级程序</strong>的完整封装，称之为Linux发行版，例如centos和Ubuntu  </p>
+                <h2 id="linux系统的组成"><a href="#linux系统的组成" class="headerlink" title="linux系统的组成"></a>linux系统的组成</h2><p>linux包含了<strong>系统内核</strong>以及<strong>系统级应用程序</strong>  </p>
+<p>系统提供<strong>内核</strong>+<strong>系统级程序</strong>的完整封装，称之为Linux发行版，例如centos和Ubuntu  </p>
 <blockquote>
 <p>linux只有一个顶级目录：根目录 /  </p>
 <blockquote>
-<p>出现在开头的 <strong>/</strong> 表示根目录<br>出现在后面的 <strong>/</strong> 表示层次关系<br>例如：/test/hello.txt</p>
+<p>出现在开头的 <strong>/</strong> 表示根目录  </p>
+<p>出现在后面的 <strong>/</strong> 表示层次关系  </p>
+<p>例如：/test/hello.txt</p>
 </blockquote>
 </blockquote>
 <hr>
 <h2 id="linux命令"><a href="#linux命令" class="headerlink" title="linux命令"></a>linux命令</h2><h3 id="linux命令基础"><a href="#linux命令基础" class="headerlink" title="linux命令基础"></a>linux命令基础</h3><blockquote>
-<p>命令行：linux终端，是一个命令提示符页面<br>命令：即linux程序，一个命令就是一个可执行程序  </p>
+<p>命令行：linux终端，是一个命令提示符页面  </p>
+<p>命令：即linux程序，一个命令就是一个可执行程序  </p>
 </blockquote>
 <p>linux命令基础格式</p>
 <blockquote>
-<p>command [-options] [parameter]<br>command：命令本身<br>-options：选项，行为细节<br>parameter：命令参数，多用于命令指向目标</p>
+<p>command [-options] [parameter] </p>
+<p>command：命令本身 </p>
+<p>-options：选项，行为细节 </p>
+<p>parameter：命令参数，多用于命令指向目标</p>
 </blockquote>
+<hr>
 <p><em><strong>注：以下命令选项大部分只写了常用的，若想深入学习请查看<a target="_blank" rel="noopener" href="https://www.linuxcool.com/">linux命令详细文档</a></strong></em></p>
 <h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3><p>其作用是在命令行中以平铺的的形式展示当前工作目录下的内容（文件以及文件夹）</p>
 <blockquote>
-<p>HOME目录：每一个用户在linux系统的专属目录，默认在：/home/用户名<br>当前工作目录：linux在执行命令时，需要一个工作目录，打开命令行程序，默认设置工作目录在用户的HOME目录</p>
+<p>HOME目录：每一个用户在linux系统的专属目录，默认在：/home/用户名  </p>
+<p>当前工作目录：linux在执行命令时，需要一个工作目录，打开命令行程序，默认设置工作目录在用户的HOME目录</p>
 </blockquote>
 <h3 id="ls命令的参数与使用"><a href="#ls命令的参数与使用" class="headerlink" title="ls命令的参数与使用"></a>ls命令的参数与使用</h3><blockquote>
-<p>ls [-a -l -h] [linux路径]<br><img src="ls.jpg" alt="选项解释">  </p>
+<p>ls [-a -l -h] [linux路径]  </p>
+<p><img src="ls.jpg" alt="选项解释"></p>
+<p>语法中的选项可组合使用，例如:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash"><span class="built_in">ls</span> -l -a ...</span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash"><span class="built_in">ls</span> -la ...</span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash"><span class="built_in">ls</span> -al ...</span></span><br></pre></td></tr></table></figure>
 </blockquote>
+<hr>
+<h3 id="目录切换相关命令"><a href="#目录切换相关命令" class="headerlink" title="目录切换相关命令"></a>目录切换相关命令</h3><h4 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h4><p>其作用是切换工作目录</p>
+<blockquote>
+<p>语法：cd [linux路径]</p>
+<p>cd 无需选项，只有参数</p>
+<p>cd直接执行，不写参数，回到用户的HOME目录</p>
+</blockquote>
+<h4 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h4><p>其作用是查看当前工作目录</p>
+<blockquote>
+<p>pwd命令无选项，无参数，直接输入pwd即可</p>
+<p>直接输出当前所在的工作目录</p>
+</blockquote>
+<h4 id="相对路径、绝对路径和特殊路径符"><a href="#相对路径、绝对路径和特殊路径符" class="headerlink" title="相对路径、绝对路径和特殊路径符"></a>相对路径、绝对路径和特殊路径符</h4><p>绝对路径：以根路径为起点，路径描述以 <strong>/</strong> 开头</p>
+<p>相对路径：以当前目录为起点</p>
+<p>特殊路径符：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">. #表示当前目录 cd ./Desktop = cd Desktop</span><br><span class="line">.. #表示上一级目录</span><br><span class="line">../.. #表示上二级目录</span><br><span class="line">~ #表示home目录</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="创建目录命令mkdir"><a href="#创建目录命令mkdir" class="headerlink" title="创建目录命令mkdir"></a>创建目录命令mkdir</h3><p>其作用是创建目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir [-p] linux路径     #-p 表示自动创建不存在的父目录</span><br></pre></td></tr></table></figure>
+
+<p>创建文件夹需要修改权限，确保操作均在HOME目录内，不要再HOME外操作，涉及到权限问题，HOME外无法创建成功。（需要使用带root权限，后续会说明）</p>
+<hr>
+<h3 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h3><h4 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h4><p>其作用是创建文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch linux路径   #这边的路径可以使用相对路径、绝对路径和特殊路径符</span><br></pre></td></tr></table></figure>
+
+<h4 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h4><p>其作用是查看文件内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat linux路径 #这边的路径可以使用相对路径、绝对路径和特殊路径符</span><br></pre></td></tr></table></figure>
+
+<h4 id="more命令"><a href="#more命令" class="headerlink" title="more命令"></a>more命令</h4><p>其作用也是查看文件内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">more linux路径 #这边的路径也可以使用相对路径、绝对路径和特殊路径符</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查到的内容可以通过空格翻页，通过q退出查看</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="cat和more的区别："><a href="#cat和more的区别：" class="headerlink" title="cat和more的区别："></a>cat和more的区别：</h4><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">区别</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">cat</td>
+<td align="center">cat是一次性显示整个文件的内容，还可以将多个文件连接起来显示，它常与重定向符号配合使用，适用于文件内容少的</td>
+</tr>
+<tr>
+<td align="center">more</td>
+<td align="center">more和less一般用于显示文件内容超过一屏的内容，并且提供翻页的功能。more比cat强大，提供分页显示的功能，less比more更强大，提供翻页，跳转，查找等命令。而且more和less都支持：用空格显示下一页，按键b显示上一页</td>
+</tr>
+<tr>
+<td align="center">less</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h4 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h4><p>其作用是复制文件/文件夹</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp [-r] 参数1 参数2</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-r 用于复制文件夹使用，表示递归</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">参数1 表示被复制的文件/文件夹（即linux路径）</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">参数2 表示要复制去的地方（即linux路径）</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h4><p>移动文件/文件夹</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mv 参数1 参数2</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">参数1 表示被移动的文件/文件夹</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">参数2 表示要移动去的地方，如果目标不存在则进行改名，确保目标要存在</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h4><p>删除文件/文件夹</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm [-r -f] 参数1 参数2 ……</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-r 用于删除文件夹</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-f 强制删除</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">参数1，参数2……参数N 表示要删除的文件/文件夹路径，按照空格隔开</span></span><br></pre></td></tr></table></figure>
+
+<p><em>注：普通用户删除内容不会弹出内容提示，只有root管理员用户删除内容会有提示，一般用户用不到-f选项</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rm [-r -f] -通配符</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">符号*表示通配符，即匹配容易内容（包含空）</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">例如：<span class="built_in">test</span>* 匹配任何以<span class="built_in">test</span>开头的内容</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">*<span class="built_in">test</span> 匹配任何以<span class="built_in">test</span>结尾的内容</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">*<span class="built_in">test</span>* 匹配任何包含<span class="built_in">test</span>的内容</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="grep、wc和管道符"><a href="#grep、wc和管道符" class="headerlink" title="grep、wc和管道符"></a>grep、wc和管道符</h3><h4 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h4><p>其作用是从文件中通过关键字过滤文件行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grep [-n] 关键字 文件路径 </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-n 表示在结果中显示匹配的行的符号</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">关键字 表示过滤的关键字，带有空格或其他符号，建议使用<span class="string">&quot;&quot;</span>将关键字包围起来</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="wc命令"><a href="#wc命令" class="headerlink" title="wc命令"></a>wc命令</h4><p>其作用是统计文件的行数、单词数量等</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wc [-c -m -l -w] 文件路径</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-c 统计bytes数量</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-m 字符数量</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-l 统计行数</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-w 统计单词数量</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">文件路径  被统计的文件，可作为内容输入端口</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="管道符命令"><a href="#管道符命令" class="headerlink" title="管道符命令 |"></a>管道符命令 |</h4><p>将管道符左边命令的结果，作为右边命令的输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat test.txt | grep fgui | wc -l #表示test文件的内容作为grep文件路径的输入，查询出包含fgui关键字的信息，在作为wc文件路径中的输入，得到信息中所包含的行数</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="查找命令"><a href="#查找命令" class="headerlink" title="查找命令"></a>查找命令</h3><h4 id="which命令"><a href="#which命令" class="headerlink" title="which命令"></a>which命令</h4><p>查看所使用的的一系列命令的程序文件存放的位置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which 要查找的命令</span><br></pre></td></tr></table></figure>
+
+<h4 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h4><p>按文件名查找文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find 起始路径 -name &quot;被查找的文件名&quot;  #可以使用通配符</span><br></pre></td></tr></table></figure>
+
+<p>按文件大小查找文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">find 起始路径 -size +/- n[kMG]</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">+、-表示大于和小于</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">n表示大小数字</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">kMG表示大小单位，k表示kb，M表示MB，G表示GB</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">例如：</span></span><br><span class="line">find / -name &quot;*centos*&quot;</span><br><span class="line">find /usr -size +100M</span><br></pre></td></tr></table></figure>
+
+<h4 id="echo命令"><a href="#echo命令" class="headerlink" title="echo命令"></a>echo命令</h4><p>可以在命令行中输出指定内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 输出的内容 #一般用&quot;&quot;包围输出的内容</span><br></pre></td></tr></table></figure>
+
+<h5 id="反引号"><a href="#反引号" class="headerlink" title="反引号 `"></a>反引号 `</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo `pwd` #可以显示出pwd命令行所执行的结果</span><br></pre></td></tr></table></figure>
+
+<h4 id="重定向符-gt-和-gt-gt"><a href="#重定向符-gt-和-gt-gt" class="headerlink" title="重定向符 &gt;和&gt;&gt;"></a>重定向符 &gt;和&gt;&gt;</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash"><span class="comment">#将左侧命令结果覆盖写入到符号右侧指定的文件中</span></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt; <span class="comment">#将左侧命令结果追加写入到符号右侧指定的文件中</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="tail命令"><a href="#tail命令" class="headerlink" title="tail命令"></a>tail命令</h4><p>可查看文件尾部内容，跟踪文件的最新更改</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tail [-f -num] linux路径</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-f 持续跟踪</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-num 查看尾部多少行，不填默认10行</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">linux路径 表示被跟踪的文件路径</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="vi编辑器"><a href="#vi编辑器" class="headerlink" title="vi编辑器"></a>vi编辑器</h3><h4 id="三种工作模式"><a href="#三种工作模式" class="headerlink" title="三种工作模式"></a>三种工作模式</h4><p><img src="workmode.jpg" alt="关系图"></p>
+<p>命令模式：此模式下，所敲的按键编辑器都理解为命令，以命令驱动执行不同的功能</p>
+<p>输入模式：又叫编辑模式、插入模式，可对文件内容进行自由编辑</p>
+<p>底线命令模式：以 <strong>:</strong> 开始，用于文件的保存、退出， <strong>w</strong> 保存   <strong>q</strong> 退出</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim 文件路径</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">如果文件路径表示的文件不存在，会用于编辑新文件</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">如果文件路径表示的文件存在，用于编辑已有文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="命令模式常用快捷键"><a href="#命令模式常用快捷键" class="headerlink" title="命令模式常用快捷键"></a>命令模式常用快捷键</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dd #删除当前行</span><br><span class="line">yy #复制当前行</span><br><span class="line">p #粘贴复制的内容</span><br><span class="line">u #撤销修改</span><br><span class="line">ctrl+r #反向撤销</span><br></pre></td></tr></table></figure>
+
+
+
 
                 
             </div>

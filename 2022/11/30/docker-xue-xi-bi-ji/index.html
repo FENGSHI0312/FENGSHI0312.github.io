@@ -372,7 +372,7 @@
 <h2 id="阿里云镜像加速"><a href="#阿里云镜像加速" class="headerlink" title="阿里云镜像加速"></a>阿里云镜像加速</h2><p>1、登录阿里云找到容器服务<br><img src="aliyun.jpg"><br>2、找到镜像加速地址，依次执行下列命令<br><img src="aliyun1.jpg"> </p>
 <hr>
 <h2 id="docker基本组成"><a href="#docker基本组成" class="headerlink" title="docker基本组成"></a>docker基本组成</h2><p>镜像：Docker 镜像（Image）可以用来创建Docker容器，一个镜像可以创建很多容器。<br>容器：Docker 利用容器（Container）是用镜像创建的运行实例。<br>仓库：仓库（Repository）是集中存放镜像文件的地方。<br>我们可以制作一个镜像提交到镜像仓库供他人使用，这里的管理方式有点类似于git。</p>
-<h2 id="docker架构图"><a href="#docker架构图" class="headerlink" title="docker架构图"></a>docker架构图</h2><p><img src="https://cdn.learnku.com/uploads/images/202003/18/22215/v7N8wg4sy3.png!large">  </p>
+<h2 id="docker架构图"><a href="#docker架构图" class="headerlink" title="docker架构图"></a>docker架构图</h2><p><img src="docker%E6%9E%B6%E6%9E%84.jpg">  </p>
 <h2 id="docker与VM虚拟机的区别"><a href="#docker与VM虚拟机的区别" class="headerlink" title="docker与VM虚拟机的区别"></a>docker与VM虚拟机的区别</h2><p><img src="compare.jpg"><br>VM(VMware)在宿主机器、宿主机器操作系统的基础上创建虚拟层、虚拟化的操作系统、虚拟化的仓库，然后再安装应用；<br>Container(Docker容器)，在宿主机器、宿主机器操作系统上创建Docker引擎，在引擎的基础上再安装应用；<br>Docker容器提供了基于进程的隔离，而VM虚拟机提供了资源的完全隔离。容器使用宿主操作系统的内核，而虚拟机使用独立的内核。  </p>
 <hr>
 <h2 id="docker的常用命令"><a href="#docker的常用命令" class="headerlink" title="docker的常用命令"></a>docker的常用命令</h2><p><em><strong>注：若要深入学习请查阅<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/run/">官方文档</a></strong></em></p>
