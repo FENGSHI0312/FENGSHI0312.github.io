@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="docker学习笔记, 风逝">
+    <meta name="keywords" content="Docker学习笔记, 风逝">
     <meta name="description" content="风逝的个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>docker学习笔记 | 风逝</title>
+    <title>Docker学习笔记 | 风逝</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">docker学习笔记</h1>
+                    <h1 class="description center-align post-title">Docker学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -366,16 +366,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="docker安装（基于centos7）"><a href="#docker安装（基于centos7）" class="headerlink" title="docker安装（基于centos7）"></a>docker安装（基于centos7）</h2><p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/" title="点击查看官方文档">帮助文档</a></p>
+                <h2 id="Docker安装（基于centos7）"><a href="#Docker安装（基于centos7）" class="headerlink" title="Docker安装（基于centos7）"></a>Docker安装（基于centos7）</h2><p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/" title="点击查看官方文档">帮助文档</a></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1、卸载旧版本</span></span><br><span class="line">sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2、需要的安装包</span></span><br><span class="line">sudo yum install -y yum-utils</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3、设置镜像仓库</span></span><br><span class="line">sudo yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line">    https://download.docker.com/linux/centos/docker-ce.repo #默认国外</span><br><span class="line"></span><br><span class="line">sudo yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line">    http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo #修改为国内阿里云镜像</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">更新yum软件包索引</span></span><br><span class="line">sudo yum makecache fast</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4、安装docker引擎  docker-ce社区版   docker-ee企业版</span></span><br><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">5、启动docker</span></span><br><span class="line">sudo systemctl start docker</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">6、设置docker自启动</span></span><br><span class="line">sudo systemctl enable docker</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">7、hello-world</span></span><br><span class="line">sudo docker run hello-world</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">8、查看镜像</span></span><br><span class="line">sudo docker images</span><br></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1、卸载docker</span></span><br><span class="line">sudo yum remove docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2、删除资源</span></span><br><span class="line">sudo rm -rf /var/lib/docker</span><br><span class="line">sudo rm -rf /var/lib/containerd</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">/var/lib/docker docker的默认工作路径</span></span><br></pre></td></tr></table></figure>
 <h2 id="阿里云镜像加速"><a href="#阿里云镜像加速" class="headerlink" title="阿里云镜像加速"></a>阿里云镜像加速</h2><p>1、登录阿里云找到容器服务<br><img src="aliyun.jpg"><br>2、找到镜像加速地址，依次执行下列命令<br><img src="aliyun1.jpg"> </p>
 <hr>
-<h2 id="docker基本组成"><a href="#docker基本组成" class="headerlink" title="docker基本组成"></a>docker基本组成</h2><p>镜像：Docker 镜像（Image）可以用来创建Docker容器，一个镜像可以创建很多容器。<br>容器：Docker 利用容器（Container）是用镜像创建的运行实例。<br>仓库：仓库（Repository）是集中存放镜像文件的地方。<br>我们可以制作一个镜像提交到镜像仓库供他人使用，这里的管理方式有点类似于git。</p>
-<h2 id="docker架构图"><a href="#docker架构图" class="headerlink" title="docker架构图"></a>docker架构图</h2><p><img src="docker%E6%9E%B6%E6%9E%84.jpg">  </p>
-<h2 id="docker与VM虚拟机的区别"><a href="#docker与VM虚拟机的区别" class="headerlink" title="docker与VM虚拟机的区别"></a>docker与VM虚拟机的区别</h2><p><img src="compare.jpg"><br>VM(VMware)在宿主机器、宿主机器操作系统的基础上创建虚拟层、虚拟化的操作系统、虚拟化的仓库，然后再安装应用；<br>Container(Docker容器)，在宿主机器、宿主机器操作系统上创建Docker引擎，在引擎的基础上再安装应用；<br>Docker容器提供了基于进程的隔离，而VM虚拟机提供了资源的完全隔离。容器使用宿主操作系统的内核，而虚拟机使用独立的内核。  </p>
+<h2 id="Docker基本组成"><a href="#Docker基本组成" class="headerlink" title="Docker基本组成"></a>Docker基本组成</h2><p>镜像：Docker 镜像（Image）可以用来创建Docker容器，一个镜像可以创建很多容器。<br>容器：Docker 利用容器（Container）是用镜像创建的运行实例。<br>仓库：仓库（Repository）是集中存放镜像文件的地方。<br>我们可以制作一个镜像提交到镜像仓库供他人使用，这里的管理方式有点类似于git。</p>
+<h2 id="Docker架构图"><a href="#Docker架构图" class="headerlink" title="Docker架构图"></a>Docker架构图</h2><p><img src="docker%E6%9E%B6%E6%9E%84.jpg">  </p>
+<h2 id="Docker与VM虚拟机的区别"><a href="#Docker与VM虚拟机的区别" class="headerlink" title="Docker与VM虚拟机的区别"></a>Docker与VM虚拟机的区别</h2><p><img src="compare.jpg"><br>VM(VMware)在宿主机器、宿主机器操作系统的基础上创建虚拟层、虚拟化的操作系统、虚拟化的仓库，然后再安装应用；<br>Container(Docker容器)，在宿主机器、宿主机器操作系统上创建Docker引擎，在引擎的基础上再安装应用；<br>Docker容器提供了基于进程的隔离，而VM虚拟机提供了资源的完全隔离。容器使用宿主操作系统的内核，而虚拟机使用独立的内核。  </p>
 <hr>
-<h2 id="docker的常用命令"><a href="#docker的常用命令" class="headerlink" title="docker的常用命令"></a>docker的常用命令</h2><p><em><strong>注：若要深入学习请查阅<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/run/">官方文档</a></strong></em></p>
+<h2 id="Docker的常用命令"><a href="#Docker的常用命令" class="headerlink" title="Docker的常用命令"></a>Docker的常用命令</h2><p><em><strong>注：若要深入学习请查阅<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/run/">官方文档</a></strong></em></p>
 <h3 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker version #版本信息</span><br><span class="line">docker info #显示docker的系统信息、镜像和容器的命令</span><br><span class="line">docker [命令] --help #帮助命令 </span><br></pre></td></tr></table></figure>
 <h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">docker images #查看自己服务器中docker镜像列表</span><br><span class="line">docker images -aq #显示所有镜像的ID</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">搜索镜像</span></span><br><span class="line">docker search 镜像名</span><br><span class="line">docker search --filter=STARS=9000 mysql #搜索STARS&gt;9000的mysql镜像</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">拉取镜像 不加tag(版本号) 即拉取docker仓库中该镜像的最新版本latest加:tag则是拉取指定版本</span></span><br><span class="line">docker pull 镜像名 </span><br><span class="line">docker pull 镜像名:tag</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除镜像</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除一个</span></span><br><span class="line">docker rmi -f 镜像名/镜像ID</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除多个其镜像ID或镜像用用空格隔开即可</span> </span><br><span class="line">docker rmi -f 镜像名/镜像ID 镜像名/镜像ID 镜像名/镜像ID</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除全部镜像  -a 意思为显示全部, -q 意思为只显示ID</span></span><br><span class="line">docker rmi -f $(docker images -aq)</span><br></pre></td></tr></table></figure>
 <h3 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h3>
@@ -622,9 +622,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="docker学习笔记">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Docker学习笔记">
                         
-                        <span class="card-title">docker学习笔记</span>
+                        <span class="card-title">Docker学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -668,9 +668,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="linux学习笔记">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Linux学习笔记">
                         
-                        <span class="card-title">linux学习笔记</span>
+                        <span class="card-title">Linux学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
